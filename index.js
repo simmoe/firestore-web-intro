@@ -9,6 +9,7 @@ const addDoc = (title, author, pub) => {
     })
 }
 let booksRef = db.collection('books')
+
 const deleteBook = (id) => {
     booksRef.doc(id).delete()
 }
