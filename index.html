@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <link rel='stylesheet' href='index.css'>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <section class='header'>
+        <h1>Books I've read</h1>
+    </section>
+    <section class='all-books'></section>
+    <footer>
+        <input type="text" name="" id="title" placeholder='title'>
+        <input type="text" name="" id="author" placeholder='author'>
+        <input type="text" name="" id="published" placeholder='published'>
+        <button id="submit">save</button>
+    </footer>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBtuyuD6uDDl5iUY36Hxo3w8lcIXWjp8ZA",
+            authDomain: "web-firestore-intro.firebaseapp.com",
+            databaseURL: "https://web-firestore-intro.firebaseio.com",
+            projectId: "web-firestore-intro",
+            storageBucket: "web-firestore-intro.appspot.com",
+            messagingSenderId: "993356292078",
+            appId: "1:993356292078:web:de71db145e4f653b04f8ff",
+            measurementId: "G-423H7NC1RW"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+    </script>
+    <script src='index.js'></script>
+</body>
+</html>
