@@ -56,7 +56,7 @@ article .delete{
     transition:.3s ease;
 }
 article .delete:hover{
-    box-shadow: 0 0 6px 0px gray;
+    box-shadow: 0 0 6px 0px #aaa;
 }
 article h2{
     margin-bottom:0;
