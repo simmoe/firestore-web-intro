@@ -18,23 +18,27 @@ body{
     place-items:center;
     text-align: center;
 }
+
 h1{
     font-family:'Times New Roman', Times, serif;
     padding-top:1rem;
     border-top:4px solid #888;
     color:#888;
 }
+
 h3{
     margin:0;
     padding:0;
     font-size:.8rem;
 }
+
 .all-books{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content:center;
     gap:.4rem;
     padding:.4rem;
+    min-height: 100vh;
 }
 
 article{
@@ -74,13 +78,13 @@ footer{
     justify-content:center;
     align-items:center;
     grid-auto-flow:column;
-    border-top: 1px solid #999;
+    background-color: #999;
 }
 input, button{
     outline:none;
     border:none;
     padding:.4rem;
-    border-radius:.6rem;
+    border-radius:.2rem;
     text-align:center;
     border:1px solid #999;
 }

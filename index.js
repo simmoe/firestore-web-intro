@@ -14,9 +14,13 @@ const deleteBook = (id) => {
     booksRef.doc(id).delete()
 }
 
+const updateAuthor = (key, element) => {
+    if(key==13) booksRef.doc(element.id).update({author:element.innerHTML})
+}
 
 let allBooksRef = document.querySelector('.all-books')
-booksRef.onSnapshot(snapshot => {
+
+booksRef.orderBy('title').onSnapshot(snapshot => {
     console.log(`Received doc snapshot: ${snapshot}`)
     allBooksRef.innerHTML = ''
     snapshot.docs.forEach(doc => {
@@ -25,7 +29,7 @@ booksRef.onSnapshot(snapshot => {
                               <img onClick="deleteBook('${doc.id}')" class='delete' src='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-trash.svg'>
                               <h2>${data.title}</h2>
                               <h3>${data.published}</h3>
-                              <p>by ${data.author}</p>
+                              <div contenteditable="true" id=${doc.id} onKeydown="updateAuthor(event.keyCode, this)">${data.author}</div>
                               </article>`
     })
 }, err => {
@@ -34,6 +38,7 @@ booksRef.onSnapshot(snapshot => {
 
 
 const submit = document.querySelector('#submit')
+
 submit.addEventListener('click', () => {
     addDoc(
         document.querySelector('#title').value,
